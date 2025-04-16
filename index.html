@@ -1,124 +1,28 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
-import { useState } from "react"
-
-export default function ClypttLanding() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" })
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-
-  return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-6 md:px-16 py-4 border-b border-neutral-800">
-        <h1 className="text-xl font-bold text-[#35b3b5]">Clyptt</h1>
-        <ul className="flex gap-6 text-sm md:text-base">
-          {['Home', 'Vision', 'About', 'Contact'].map((link) => (
-            <li key={link}>
-              <a href={`#${link.toLowerCase()}`} className="hover:text-[#35b3b5] transition-colors duration-300">{link}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="px-6 md:px-16 py-24 text-center bg-gradient-to-br from-black to-[#0f1e1e]">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Secure. <span className="text-[#35b3b5]">Scalable.</span> Smart.
-          </h2>
-          <p className="max-w-xl mx-auto mb-10 text-gray-300">
-            Clyptt Inc. delivers infrastructure and data tools built for real-world impact. Modular. Efficient. Ready.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" className="rounded-2xl px-6 py-4 text-base">
-              Learn More
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-6 py-4 text-base border-white text-white">
-              Contact Us
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Vision Section */}
-      <section id="vision" className="px-6 md:px-16 py-20">
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Infra",
-              desc: "Deployable business-first infrastructure tools—optimized for scale, not just speed."
-            },
-            {
-              title: "Data",
-              desc: "From raw streams to dashboards—custom engines that extract, clean, and activate."
-            },
-            {
-              title: "Vision",
-              desc: "We don’t follow playbooks. We rewrite them. Modular by design, visionary in execution."
-            },
-          ].map(({ title, desc }) => (
-            <Card key={title} className="bg-[#121212] border-[#1f1f1f]">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-[#35b3b5]">{title}</h3>
-                <p className="text-sm text-gray-300">{desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="px-6 md:px-16 py-20 bg-[#0c0c0c] text-gray-300">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#35b3b5]">About Clyptt</h2>
-        <p className="max-w-3xl">
-          Clyptt Inc. is a U.S.-based subsidiary of Sanmati Group (India), delivering high-performance infrastructure and data solutions tailored for modern operations. With a focus on modular software, scalable pipelines, and no-compromise security, we help organizations move faster with clarity.
-        </p>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="px-6 md:px-16 py-20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#35b3b5]">Contact Us</h2>
-        <form action="" method="POST" className="max-w-xl space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={form.name}
-            onChange={handleChange}
-            className="w-full p-3 rounded-md bg-neutral-900 border border-neutral-700 text-white"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full p-3 rounded-md bg-neutral-900 border border-neutral-700 text-white"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={form.message}
-            onChange={handleChange}
-            rows={4}
-            className="w-full p-3 rounded-md bg-neutral-900 border border-neutral-700 text-white"
-          />
-          <Button type="submit" className="px-6 py-3 rounded-xl">Send Message</Button>
-        </form>
-      </section>
-
-      {/* Footer */}
-      <footer className="text-center text-gray-400 text-sm py-8 border-t border-neutral-800">
-        <p>© {new Date().getFullYear()} Clyptt Inc. — Austin, TX</p>
-        <p>Made by Clyptt</p>
-      </footer>
-    </main>
-  )
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clyptt Inc.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 100px;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+    p {
+      font-size: 1.2em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Clyptt</h1>
+  <p>Building smart systems for the future.</p>
+</body>
+</html>
